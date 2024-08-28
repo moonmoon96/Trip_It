@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getCookie } from "Utility/Cookie";
 import Good from "./Good";
 
 function Ban (props : any){
     
-    const [click, setClick] = useState(0);
+    const [click, setClick] = useState('R0');
     const [text, setText] = useState('');
     const [good, setGood] = useState(0);
     
@@ -23,11 +23,19 @@ function Ban (props : any){
 
     let navigate = useNavigate();
 
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const postId = searchParams.get("post");
+
     async function doBan(){
         await axios
             .post(
-                process.env.REACT_APP_BASE_URL + "/add",
-            {},
+                process.env.REACT_APP_BASE_URL + "/report/add",
+            {
+                reportType : click,
+                postId : postId,
+                reportDetail : text
+            },
             {
                 headers: {
                     "Content-Type": "application/json",
@@ -55,10 +63,10 @@ function Ban (props : any){
                         <div className="valid-modal-body">
                             <span className="valid-modal-reason">신고 사유를 선택하세요.</span>
                             <div className="valid-modal-gr">
-                                <button className={"valid-modal-grb" + (click == 1 ? 'act' : '')} onClick={()=>{setClick(1)}}>음란</button>
-                                <button className={"valid-modal-grb" + (click == 2 ? 'act' : '')} onClick={()=>{setClick(2)}}>폭력</button>
-                                <button className={"valid-modal-grb" + (click == 3 ? 'act' : '')} onClick={()=>{setClick(3)}}>욕설</button>
-                                <button className={"valid-modal-grb" + (click == 4 ? 'act' : '')} onClick={()=>{setClick(4)}}>기타</button>
+                                <button className={"valid-modal-grb" + (click == 'R1' ? 'act' : '')} onClick={()=>{setClick('R1')}}>음란</button>
+                                <button className={"valid-modal-grb" + (click == 'R2' ? 'act' : '')} onClick={()=>{setClick('R2')}}>폭력</button>
+                                <button className={"valid-modal-grb" + (click == 'R3' ? 'act' : '')} onClick={()=>{setClick('R3')}}>욕설</button>
+                                <button className={"valid-modal-grb" + (click == 'R4' ? 'act' : '')} onClick={()=>{setClick('R4')}}>기타</button>
                             </div>
                             <div className="valid-modal-start">
                                 {text === '' && (
@@ -76,7 +84,7 @@ function Ban (props : any){
                                 <button className="valid-modal-cancel" onClick={()=>{props.setBan(0)}}>
                                     취소
                                 </button>
-                                <button className={"valid-modal-check3" + (click == 0 && text === '' ? '' : 'act')} onClick={()=>{doBan()}}>
+                                <button className={"valid-modal-check3" + (click == 'R0' && text === '' ? '' : 'act')} onClick={()=>{doBan()}}>
                                     확인
                                 </button>
                             </div>

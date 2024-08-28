@@ -17,8 +17,10 @@ function Cut(props : any){
     async function doCut(){
         await axios
             .post(
-                process.env.REACT_APP_BASE_URL + "/add",
-            {},
+                process.env.REACT_APP_BASE_URL + "/block/add",
+            {
+                nickname : localStorage.getItem('nick')
+            },
             {
                 headers: {
                     "Content-Type": "application/json",

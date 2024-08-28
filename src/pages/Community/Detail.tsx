@@ -76,6 +76,8 @@ function Detail() {
           });
 
           setDetails(response.data);
+          const nicknames = response.data.map((item : any) => item.nickname);
+          localStorage.setItem('nick', nicknames);
         }
       } catch (err) {
         console.log("Error:", err);
