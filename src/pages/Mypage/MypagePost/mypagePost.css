@@ -1,0 +1,117 @@
+.mypage-post {
+  padding: 10px;
+  .mypage-post-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .mypage-post-panels {
+      display: flex;
+      justify-content: space-between;
+      .mypage-post-panels-left {
+        display: flex;
+        align-items: center;
+      }
+      .mypage-post-panels-right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+
+    .mypage-post-delete {
+      margin-top: 10px;
+      display: flex;
+      justify-content: right;
+      visibility: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      .mypage-post-delete-selecteall {
+        color: blue;
+        cursor: pointer;
+      }
+      .mypage-post-delete-title {
+        color: red;
+        cursor: pointer;
+      }
+    }
+    .mypage-post-delete.open {
+      visibility: visible;
+      max-height: 50px;
+      opacity: 1;
+      margin: 10px 0;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      gap: 5px;
+      font-size: 14px;
+      .mypage-post-delete-selecteall:hover {
+        font-weight: bold;
+      }
+      .mypage-post-delete-title:hover {
+        font-weight: bold;
+      }
+    }
+    .mypage-post-grid-loading {
+      text-align: center;
+      margin: 160px auto;
+      animation: rotateAnimation 1s ease-in-out infinite;
+    }
+    .mypage-post-grid-empty {
+      text-align: center;
+      margin: 160px auto;
+    }
+    .mypage-post-grid {
+      display: grid;
+      /* 1fr의 너비 제한 */
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 10px;
+    }
+    .mypage-post-search {
+      margin-top: 20px;
+    }
+    .mypage-post-pagination {
+    }
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 761px) {
+  .mypage-post {
+    .mypage-post-container {
+      .mypage-post-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 761px) and (max-width: 950px) {
+  .mypage-post {
+    .mypage-post-container {
+      .mypage-post-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+  }
+}
+@media screen and (min-width: 951px) {
+  .mypage-post {
+    .mypage-post-container {
+      .mypage-post-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+            0,
+            1fr
+          );
+      }
+    }
+  }
+}

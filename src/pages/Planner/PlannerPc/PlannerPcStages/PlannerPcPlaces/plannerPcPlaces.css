@@ -1,0 +1,220 @@
+.planner-pc-places {
+  width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+
+  padding-top: 10px;
+  /* gap: 10px; */
+  .planner-pc-places-place {
+    box-sizing: border-box;
+    width: 390px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .planner-pc-places-place-tags {
+      font-size: 12px;
+      margin-bottom: 10px;
+      .planner-pc-places-place-tags-container {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 0px;
+
+        .planner-pc-places-place-tags-tag {
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 5px;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+        }
+
+        .planner-pc-places-place-tags-tag.active {
+          border: none;
+          background-color: var(--basic-color);
+          color: #fff;
+          transition: all 0.2s ease-in-out;
+        }
+        .planner-pc-places-place-tags-tag.loading {
+          opacity: 0.5;
+        }
+      }
+    }
+    .planner-pc-places-place-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 300px;
+      padding-right: 5px;
+
+      .planner-pc-places-place-list-target {
+        padding: 10px;
+        height: 100%;
+        /* border: 1px solid #ccc; */
+
+        .icon {
+          transform: rotate(0deg);
+          transition: transform 1s ease-in-out;
+        }
+        .icon.loading {
+          transform: rotate(360deg);
+          transition: transform 1s ease-in-out;
+        }
+      }
+      .planner-pc-places-place-list-empty {
+        margin-top: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span.icon {
+          font-size: 20px;
+          transform: rotate(0deg);
+          transition: transform 5s ease-in-out;
+        }
+        span.icon.loading {
+          transform: rotate(5400deg);
+          transition: transform 5s ease-in-out;
+        }
+      }
+    }
+    .planner-pc-places-place-list.loading {
+      opacity: 0.5;
+    }
+  }
+  .planner-pc-places-selected {
+    box-sizing: border-box;
+    width: 390px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .planner-pc-places-selected-tags {
+      font-size: 12px;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .planner-pc-places-selected-tags-tag {
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+
+        p {
+          width: 30px;
+        }
+      }
+      .planner-pc-places-selected-tags-tag-nodate {
+        padding: 5px;
+      }
+
+      .planner-pc-places-selected-tags-tag.active {
+        border: none;
+        color: #fff;
+        background-color: var(--basic-color);
+        transition: all 0.2s ease-in-out;
+      }
+      .planner-pc-places-selected-tags-tag.completed {
+        border: none;
+        background-color: var(--basic-color);
+        color: #fff;
+      }
+    }
+
+    .planner-pc-places-selected-list {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 300px;
+      padding-right: 5px;
+    }
+    .planner-pc-places-selected-list-noplace {
+      flex: 1;
+      text-align: center;
+      margin: 33% 0;
+    }
+
+    .planner-pc-places-selected-list-duration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+    }
+  }
+}
+
+.scroll {
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  overflow-y: scroll;
+  border: 1px solid black;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Nanum Gothic";
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 스크롤바 설정*/
+.planner-pc-places-place-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* 스크롤바 막대 설정*/
+.planner-pc-places-place-list::-webkit-scrollbar-thumb {
+  background-color: var(--basic-hover-color);
+  /* 스크롤바 둥글게 설정    */
+  border-radius: 10px;
+}
+.planner-pc-places-place-list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--basic-color);
+  /* 스크롤바 둥글게 설정    */
+  border-radius: 10px;
+}
+
+/* 스크롤바 뒷 배경 설정*/
+.planner-pc-places-place-list::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* 스크롤바 설정*/
+.planner-pc-places-selected-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* 스크롤바 막대 설정*/
+.planner-pc-places-selected-list::-webkit-scrollbar-thumb {
+  background-color: var(--basic-hover-color);
+  /* 스크롤바 둥글게 설정    */
+  border-radius: 10px;
+}
+
+.planner-pc-places-selected-list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--basic-color);
+  /* 스크롤바 둥글게 설정    */
+  border-radius: 10px;
+}
+
+/* 스크롤바 뒷 배경 설정*/
+.planner-pc-places-selected-list::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}

@@ -1,0 +1,95 @@
+.planner-pc-calendars {
+  margin: 12px auto;
+
+  .planner-pc-calendars-month,
+  .planner-pc-calendars-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+  }
+  .calendar-backward,
+  .calendar-forward {
+    padding: 0 20px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 850px) {
+  .planner-pc-calendars-month {
+    .month-title {
+      display: flex;
+      justify-content: center;
+      width: 300px;
+      .title-single {
+        padding: 10px;
+        width: 300px;
+        text-align: center;
+      }
+      .title-double {
+        padding: 0px;
+        width: 0;
+        visibility: hidden;
+        text-align: center;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  .planner-pc-calendars-container {
+    .calendar-pc-container {
+      display: flex;
+      width: 300px;
+
+      .calendar-pc-container-single {
+        width: 300px;
+      }
+      .calendar-pc-container-double {
+        visibility: hidden;
+        width: 0;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 851px) {
+  .planner-pc-calendars-month {
+    .month-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 70%;
+      .title-single {
+        padding: 10px;
+        width: 300px;
+        text-align: center;
+      }
+      .title-double {
+        padding: 10px;
+        width: 300px;
+        text-align: center;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  .planner-pc-calendars-container {
+    .calendar-pc-container {
+      display: flex;
+      justify-content: center;
+      max-width: 70%;
+      gap: 25px;
+      .calendar-pc-container-single {
+        width: 300px;
+      }
+      .calendar-pc-container-double {
+        visibility: visible;
+        width: 300px;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}

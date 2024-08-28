@@ -1,0 +1,39 @@
+.admin-block-card {
+  .admin-block-card-container {
+    padding: 10px;
+    border: 1px solid var(--basic-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 4px 4px;
+
+    .admin-block-card-info-nickname {
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+
+      .admin-block-card-info-nickname-name {
+      }
+      .admin-block-card-info-nickname-detail {
+      }
+    }
+    .admin-block-card-info-date {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+    .admin-block-card-btn {
+      button {
+        font-size: 12px;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        padding: 7px;
+        background-color: var(--basic-color);
+        color: #fff;
+        /* cursor: pointer; */
+      }
+    }
+  }
+}

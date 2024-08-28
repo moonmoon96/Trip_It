@@ -1,0 +1,304 @@
+.planner-place-card-date {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 4px 2px;
+
+  position: relative;
+  transition: transform 0.3s ease; /* 애니메이션 적용 */
+  .planner-place-card-date-main {
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px;
+
+    .planner-place-card-date-main-position {
+      box-sizing: border-box;
+      display: block;
+      background-color: #ccc;
+      border-radius: 10px 0 0 10px;
+      transition: border-radius 0.3s ease-in-out;
+      flex: 1;
+
+      .planner-place-card-date-main-position-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 0 4px;
+        height: 100%;
+        .planner-place-card-date-main-position-up {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .planner-place-card-date-main-position-up.deactive {
+          color: #fff;
+        }
+        .planner-place-card-date-main-position-down {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .planner-place-card-date-main-position-down.deactive {
+          color: #fff;
+        }
+      }
+    }
+    .planner-place-card-date-main-position.open {
+      border-radius: 10px 0 0 0;
+      transition: border-radius 0.3s ease-in-out;
+    }
+    .planner-place-card-date-main-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 83%;
+      background-color: #fff;
+      .planner-place-card-date-main-info-photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          display: block;
+          width: 60px;
+          height: 60px;
+        }
+      }
+      .planner-place-card-date-main-info-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        width: calc(100% - 70px);
+        .planner-place-card-date-main-info-detail-title {
+          display: flex;
+          gap: 10px;
+          .planner-place-card-date-main-info-detail-title-name {
+            font-size: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .planner-place-card-date-main-info-detail-title-more {
+            font-size: 12px;
+          }
+        }
+        .planner-place-card-date-main-info-detail-addr {
+          font-size: 12px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .planner-place-card-date-main-info-detail-time {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .planner-place-card-date-main-dropdown {
+      cursor: pointer;
+      box-sizing: border-box;
+      width: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      background-color: var(--basic-color);
+      border-radius: 0 10px 10px 0;
+      position: relative;
+      transition: border-radius 0.3s ease-in-out;
+
+      .planner-place-card-date-main-dropdown-title {
+      }
+      .planner-place-card-date-main-dropdown-container {
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        top: 110%;
+        z-index: 1;
+        width: 50px;
+        overflow-y: auto;
+
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+
+        .planner-place-card-date-main-dropdown-item {
+          padding: 5px;
+          text-align: center;
+        }
+
+        .planner-place-card-date-main-dropdown-item.selected {
+          padding: 5px;
+          color: var(--basic-color);
+          text-align: center;
+        }
+      }
+      .planner-place-card-date-main-dropdown-container.active {
+        visibility: visible;
+        max-height: 100px;
+        opacity: 1;
+
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    .planner-place-card-date-main-dropdown.open {
+      border-radius: 0 10px 0px 0;
+      transition: border-radius 0.3s ease-in-out;
+    }
+
+    .planner-place-card-date-main-click.open {
+      border-radius: 0 10px 0px 0;
+    }
+
+    .planner-place-card-date-main-click.requesting {
+      background-color: #ccc;
+    }
+  }
+  .planner-place-card-date-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    visibility: hidden;
+    max-height: 0px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    .planner-place-card-date-overview-depict {
+      border: 1px solid #ccc;
+      box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 4px 2px;
+      padding: 5px;
+      font-size: 12px;
+      border-radius: 10px;
+
+      .planner-place-card-date-overview-depict-title {
+        text-align: center;
+      }
+      .planner-place-card-date-overview-depict-detail {
+        overflow-y: auto;
+
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      .planner-place-card-date-overview-depict-detail.open {
+        visibility: visible;
+        margin-top: 5px;
+        max-height: 100px;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    .planner-place-card-date-overview-map {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 4px 2px;
+      padding: 5px;
+      font-size: 12px;
+
+      .planner-place-card-date-overview-map-title {
+        text-align: center;
+      }
+      .planner-place-card-date-overview-map-container {
+        overflow-y: auto;
+
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      .planner-place-card-date-overview-map-container.open {
+        visibility: visible;
+        padding-top: 10px;
+        max-height: 250px;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .planner-place-card-date-overview.active {
+    padding: 10px;
+    visibility: visible;
+    max-height: 500px;
+    opacity: 1;
+
+    transition: all 0.3s ease-in-out;
+
+    .planner-place-card-date-overview-depict {
+      border: 1px solid #ccc;
+      padding: 5px;
+      font-size: 12px;
+      border-radius: 10px;
+
+      .planner-place-card-date-overview-depict-title {
+        text-align: center;
+      }
+      .planner-place-card-date-overview-depict-detail {
+        overflow-y: auto;
+
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      .planner-place-card-date-overview-depict-detail.open {
+        visibility: visible;
+        margin-top: 5px;
+        max-height: 100px;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    .planner-place-card-date-overview-map {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 5px;
+      font-size: 12px;
+
+      .planner-place-card-date-overview-map-title {
+        text-align: center;
+      }
+      .planner-place-card-date-overview-map-container {
+        overflow-y: auto;
+
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      .planner-place-card-date-overview-map-container.open {
+        visibility: visible;
+        padding-top: 10px;
+        max-height: 250px;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+.move-up {
+  transform: translateY(-100%);
+}
+
+.move-down {
+  transform: translateY(100%); /* 아래로 이동 */
+}

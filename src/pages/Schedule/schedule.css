@@ -1,0 +1,29 @@
+.schedule {
+}
+
+@media screen and (max-width: 450px) {
+  .schedule {
+    .schedule-mobile {
+    }
+    .schedule-pc {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 451px) {
+  .schedule {
+    .schedule-mobile {
+      display: none;
+    }
+    .mypage-footer-blank {
+      display: none;
+    }
+    .footer {
+      display: none;
+    }
+  }
+  .schedule-pc {
+    display: block;
+  }
+}

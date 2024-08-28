@@ -1,0 +1,75 @@
+.planner-pc-register-plan-date {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  .planner-pc-register-plan-date-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    .planner-pc-register-plan-date-title {
+      font-size: 14px;
+      padding: 3px;
+      line-height: 16px;
+      width: 40px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+    .planner-pc-register-plan-date-places {
+      user-select: none;
+      flex: 1;
+      width: 100%;
+      display: flex;
+      .planner-pc-register-plan-date-places-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        width: 100%;
+
+        .planner-pc-register-plan-date-places-item {
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 3px;
+          max-width: 50px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          cursor: grab;
+        }
+
+        .planner-pc-register-plan-date-places-item.emptyback {
+          flex: 1;
+        }
+        .planner-pc-register-plan-date-places-item:active {
+          cursor: grabbing;
+        }
+        .planner-pc-register-plan-date-places-item.accommo {
+          color: pink;
+        }
+
+        .planner-pc-register-plan-date-places-item.droppable {
+          border: 1px solid var(--basic-color);
+        }
+      }
+    }
+  }
+
+  .planner-pc-register-plan-date-drag {
+    color: #ccc;
+    cursor: grab;
+  }
+}
+
+.planner-pc-register-plan-date.droppable {
+  border: 1px solid var(--basic-color);
+}
+.planner-pc-register-plan-date:active {
+  cursor: grabbing;
+}

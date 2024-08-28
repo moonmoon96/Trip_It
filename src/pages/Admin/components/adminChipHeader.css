@@ -1,0 +1,63 @@
+.admin-header-chip {
+  visibility: visible;
+  max-height: 200px;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  padding: 0 5px 10px;
+  .admin-header-chip-container {
+    display: flex;
+    gap: 5px;
+
+    a {
+      padding: 10px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .admin-header-chip-item {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      color: #ccc;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      background-color: #fff;
+      transition: color, background-color 0.2s ease-in-out;
+      transition: border, color 0.2s ease-in-out;
+    }
+
+    .admin-header-chip-item.active {
+      border: 1px solid var(--basic-color);
+      border-radius: 5px;
+      background-color: var(--basic-color);
+      color: #fff;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      transition: color, background-color 0.2s ease-in-out;
+    }
+
+    .admin-header-chip-item:hover {
+      border: 1px solid var(--basic-color);
+      color: var(--basic-color);
+      transition: border, color 0.2s ease-in-out;
+    }
+    .admin-header-chip-item.active:hover {
+      color: #fff;
+    }
+  }
+}
+
+.admin-header-chip.close {
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+}
+a {
+  color: black;
+}
+
+a:link {
+  color: black;
+}
+
+a:active {
+  color: black;
+}

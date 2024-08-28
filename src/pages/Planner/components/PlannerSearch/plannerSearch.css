@@ -1,0 +1,36 @@
+.planner-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 0%;
+  .planner-search-box {
+    width: 0%;
+    padding: 4px;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  .planner-search-icon {
+    position: absolute;
+    margin-top: 2px;
+    margin-right: 7px;
+    transition: all 0.2s ease-in-out !important; /* !important 추가 */
+  }
+}
+.planner-search.active {
+  width: 100%;
+  flex: 1;
+
+  .planner-search-box.active {
+    width: 100%;
+    position: relative;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  .planner-search-icon {
+    right: 0;
+    transition: all 0.2s ease-in-out !important; /* !important 추가 */
+  }
+}

@@ -1,0 +1,90 @@
+.mypage-schedule-card {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+
+  position: relative;
+  box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+  .mypage-schedule-card-select {
+    position: absolute;
+    right: 0;
+
+    p {
+      color: #fff;
+      margin-top: 5px;
+      margin-right: 5px;
+    }
+  }
+  .mypage-schedule-card-link {
+    .mypage-schedule-card-photoarea {
+      border-radius: 10px;
+      width: 100%;
+      img {
+        border-radius: 10px 10px 0px 0px;
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
+    .mypage-schedule-card-textarea {
+      padding: 10px;
+
+      .mypage-schedule-card-textarea-title {
+        font-size: 13px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5px;
+
+        .mypage-schedule-card-textarea-title-name {
+          font-weight: bold;
+        }
+        .mypage-schedule-card-textarea-title-user {
+        }
+      }
+      .mypage-schedule-card-textarea-duration {
+        font-size: 12px;
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        align-items: baseline;
+        .mypage-schedule-card-textarea-duration-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .mypage-schedule-card-textarea-duration-text {
+        }
+      }
+      .mypage-schedule-card-textarea-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        .mypage-schedule-card-textarea-regdate {
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+          gap: 3px;
+          align-items: baseline;
+          .mypage-schedule-card-textarea-regdate-duration-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .mypage-schedule-card-textarea-regdate-duration-text {
+          }
+        }
+        .mypage-schedule-card-textarea-local {
+          color: var(--basic-color);
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .mypage-schedule-card-item:hover {
+    border: 2px solid var(--basic-color);
+  }
+}

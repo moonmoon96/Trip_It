@@ -1,0 +1,30 @@
+.mypage-schedule-post {
+  height: 100%;
+}
+
+@media screen and (max-width: 450px) {
+  .mypage-schedule-post {
+    .schedule-mobile {
+    }
+    .schedule-pc {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 451px) {
+  .mypage-schedule-post {
+    .schedule-mobile {
+      display: none;
+    }
+    .mypage-footer-blank {
+      display: none;
+    }
+    .footer {
+      display: none;
+    }
+  }
+  .schedule-pc {
+    display: block;
+  }
+}

@@ -1,0 +1,43 @@
+.admin-sort {
+  position: relative;
+  z-index: 1;
+  .admin-sort-title {
+    cursor: pointer;
+  }
+  .admin-sort-container {
+    position: absolute;
+    width: 160px;
+    background-color: #fff;
+    text-align: center;
+    right: 0;
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+
+    .admin-sort-item {
+      padding: 5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .admin-sort-container.open {
+    margin-top: 5px;
+    visibility: visible;
+    max-height: 350px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+
+    .admin-sort-item:hover {
+      color: var(--basic-color);
+    }
+
+    .admin-sort-item.active {
+      color: var(--basic-color);
+    }
+  }
+}

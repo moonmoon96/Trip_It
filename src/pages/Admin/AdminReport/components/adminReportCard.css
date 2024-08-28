@@ -1,0 +1,129 @@
+.admin-report-card {
+  .admin-report-card-container {
+    padding: 10px;
+    border: 1px solid var(--basic-color);
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 4px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .admin-report-card-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+
+      .admin-report-card-item-name {
+      }
+      .admin-report-card-item-detail {
+        display: flex;
+        align-items: center;
+
+        .admin-report-card-info-reportType-button {
+          font-size: 12px;
+          border: none;
+          border-radius: 5px;
+          padding: 5px 10px;
+          outline: none;
+          color: #fff;
+        }
+        .admin-report-card-info-reportType-button.lewd {
+          background-color: orange;
+        }
+        .admin-report-card-info-reportType-button.violence {
+          background-color: red;
+        }
+        .admin-report-card-info-reportType-button.abuse {
+          background-color: violet;
+        }
+        .admin-report-card-info-reportType-button.etc {
+          background-color: blue;
+        }
+
+        .admin-report-card-info-reportType-dropdown {
+          cursor: pointer;
+          margin-left: 5px;
+          font-size: 18px;
+          transform: rotate(0deg);
+          transition: transform 0.2s ease-in-out;
+        }
+
+        .admin-report-card-info-reportType-dropdown.active {
+          cursor: pointer;
+          margin-left: 5px;
+          font-size: 18px;
+          transform: rotate(180deg);
+          transition: transform 0.2s ease-in-out;
+        }
+      }
+    }
+
+    .admin-report-card-btn {
+      position: relative;
+      button {
+        font-size: 13px;
+        border: none;
+        border-radius: 10px;
+        padding: 7px;
+        width: 100%;
+        background-color: var(--basic-color);
+        color: #fff;
+        cursor: pointer;
+      }
+      .admin-report-card-btn-container {
+        position: absolute;
+        visibility: hidden;
+        max-height: 0;
+        opacity: 0;
+        right: 0;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+        width: 80px;
+        .admin-report-card-btn-item {
+          padding: 5px;
+          cursor: pointer;
+        }
+      }
+      .admin-report-card-btn-container.open {
+        visibility: visible;
+        max-height: 300px;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+        .admin-report-card-btn-item:hover {
+          color: var(--basic-color);
+        }
+      }
+    }
+
+    .admin-report-card-lower {
+      visibility: hidden;
+      max-height: 0px;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+
+      .admin-report-card-lower-container {
+        border-top: 1px solid #ccc;
+        margin-top: 10px;
+        padding-top: 10px;
+
+        .admin-report-card-lower-title {
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .admin-report-card-lower-detail {
+          font-size: 12px;
+        }
+      }
+    }
+    .admin-report-card-lower.active {
+      visibility: visible;
+      max-height: 100px;
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}

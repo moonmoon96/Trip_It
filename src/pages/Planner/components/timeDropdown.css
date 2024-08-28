@@ -1,0 +1,64 @@
+.time-dropdown {
+  position: relative;
+  .time-dropdown-title {
+  }
+  .time-dropdown-container {
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+    left: -6px;
+    visibility: hidden;
+    max-height: 0px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    overflow-y: auto;
+    .time-dropdown-item {
+      padding: 5px;
+    }
+  }
+
+  .time-dropdown-container.active {
+    visibility: visible;
+    max-height: 130px;
+    opacity: 1;
+    border: 1px solid #ccc;
+    transition: all 0.2s ease-in-out;
+    .time-dropdown-item {
+      padding: 5px;
+    }
+    .time-dropdown-item.selected {
+      background-color: var(--basic-color);
+      color: #fff;
+    }
+  }
+}
+
+.scroll {
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  overflow-y: scroll;
+  border: 1px solid black;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Nanum Gothic";
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 스크롤바 설정*/
+.time-dropdown-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* 스크롤바 막대 설정*/
+.time-dropdown-container::-webkit-scrollbar-thumb {
+  background-color: var(--basic-color);
+  /* 스크롤바 둥글게 설정    */
+  /* border-radius: 10px; */
+}
+
+/* 스크롤바 뒷 배경 설정*/
+.time-dropdown-container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}

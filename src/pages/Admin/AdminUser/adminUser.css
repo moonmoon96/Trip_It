@@ -1,0 +1,212 @@
+.admin-user {
+  padding: 10px;
+  user-select: none;
+
+  .admin-user-container {
+    margin: 0 auto;
+    max-width: 800px;
+    .admin-user-item {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      display: flex;
+      max-width: 800px;
+      margin: 10px auto;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+
+      .admin-user-detail {
+        flex: 1;
+        .admin-user-detail-title {
+          font-weight: bold;
+          font-size: 14px;
+          padding: 5px;
+        }
+        .admin-user-detail-data {
+          font-size: 14px;
+          padding: 5px;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          width: 50%;
+        }
+
+        .admin-user-detail-info {
+          padding: 5px;
+          outline: none;
+          border: none;
+          width: 50%;
+        }
+      }
+      .admin-user-detail-control {
+        .admin-user-detail-control-title {
+          font-size: 14px;
+        }
+        .admin-user-detail-control-container {
+          .admin-user-detail-control-item {
+          }
+        }
+        .admin-user-detail-control-container.open {
+          .admin-user-detail-control-item {
+          }
+        }
+      }
+    }
+    .admin-user-photo {
+      display: flex;
+      justify-content: center;
+      padding: 30px 10px;
+      border-radius: 10px;
+      box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+      .admin-user-photo-container {
+        img {
+          border-radius: 50%;
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.admin-user-loading {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.admin-user {
+  padding: 10px;
+  user-select: none;
+
+  .admin-user-container {
+    margin: 0 auto;
+    max-width: 800px;
+    .admin-user-item {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      display: flex;
+      max-width: 800px;
+      margin: 10px auto;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+
+      .admin-user-detail {
+        flex: 1;
+        .admin-user-detail-title {
+          font-weight: bold;
+          font-size: 14px;
+          padding: 5px;
+        }
+        .admin-user-detail-data {
+          font-size: 14px;
+          padding: 5px;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          width: 50%;
+        }
+
+        .admin-user-detail-info {
+          padding: 5px;
+          outline: none;
+          border: none;
+        }
+      }
+      .admin-user-detail-control {
+        position: relative;
+        .admin-user-detail-control-title {
+          cursor: pointer;
+        }
+        .admin-user-detail-control-title:hover {
+          color: var(--basic-color);
+        }
+        .admin-user-detail-control-container {
+          margin-top: 0px;
+          position: absolute;
+          right: 0;
+          width: 130px;
+          background-color: #fff;
+          padding: 5px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          visibility: hidden;
+          max-height: 0;
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+          .admin-user-detail-control-item {
+            text-align: center;
+            font-size: 14px;
+            padding: 5px 0;
+            cursor: pointer;
+          }
+        }
+        .admin-user-detail-control-container.open {
+          margin-top: 10px;
+          visibility: visible;
+          max-height: 300px;
+          opacity: 1;
+          transition: all 0.3s ease-in-out;
+
+          .admin-user-detail-control-item:hover {
+            color: var(--basic-color);
+          }
+        }
+      }
+    }
+
+    .admin-user-photo {
+      display: flex;
+      justify-content: center;
+      padding: 30px 10px;
+      border-radius: 10px;
+      box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+      .admin-user-photo-container {
+        justify-content: center;
+        display: inline-flex;
+        position: relative;
+
+        img {
+          border-radius: 50%;
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+          cursor: pointer;
+        }
+        .admin-user-photo-icon {
+          cursor: pointer;
+          background-color: #fff;
+          font-size: 20px;
+          text-align: center;
+          line-height: 30px;
+          position: absolute;
+          right: 10px;
+          bottom: 0;
+          box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          color: #666;
+        }
+      }
+    }
+  }
+}
+
+.admin-user-loading {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,54 @@
+:root {
+  --basic-color: rgb(0, 206, 124);
+  --basic-hover-color: rgba(0, 206, 124, 0.6);
+}
+/* 기본 속성 제거 */
+ul,
+li,
+figure,
+img,
+textarea,
+section,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+}
+figure {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  unicode-bidi: initial;
+}
+a {
+  text-decoration: none;
+}
+.mypage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 100px;
+
+  main {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .root-layout {
+    .head {
+      display: none;
+    }
+
+    main {
+      .mypage {
+        padding-top: 20px;
+      }
+    }
+  }
+}

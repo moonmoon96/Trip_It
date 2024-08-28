@@ -1,0 +1,145 @@
+.planner-places-accordian-api {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 4px 2px;
+  padding: 10px;
+
+  .planner-places-accordian-api-title {
+    display: flex;
+    justify-content: space-between;
+    .planner-places-accordian-api-title-name {
+    }
+    .planner-places-accordian-api-title-icon {
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .planner-places-accordian-api-container {
+    visibility: hidden;
+    max-height: 0px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    .planner-places-accordian-api-tags {
+      display: flex;
+      gap: 10px;
+      .planner-places-accordian-api-tags-tag {
+        box-sizing: border-box;
+        font-size: 12px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .planner-places-accordian-api-tags-tag.active {
+        border: none;
+        border-radius: 5px;
+        background-color: var(--basic-color);
+        color: #fff;
+      }
+    }
+
+    .planner-places-accordian-api-main {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  .planner-places-accordian-api-container.active {
+    visibility: visible;
+    max-height: 800px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .planner-places-accordian-api-tags {
+      display: flex;
+      gap: 10px;
+      .planner-places-accordian-api-tags-tag {
+        box-sizing: border-box;
+        font-size: 12px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .planner-places-accordian-api-tags-tag.active {
+        border: none;
+        border-radius: 5px;
+        background-color: var(--basic-color);
+        color: #fff;
+      }
+
+      .planner-places-accordian-api-tags-search {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 0%;
+        .planner-places-accordian-api-tags-search-box {
+          width: 0%;
+          padding: 4px;
+          border: 0px solid #ccc;
+          border-radius: 4px;
+          transition: all 0.2s ease-in-out;
+        }
+        .planner-places-accordian-api-tags-search-icon {
+          position: absolute;
+          margin-top: 2px;
+          margin-right: 7px;
+          transition: all 0.2s ease-in-out !important; /* !important 추가 */
+        }
+      }
+      .planner-places-accordian-api-tags-search.active {
+        width: 100%;
+        flex: 1;
+
+        .planner-places-accordian-api-tags-search-box.active {
+          width: 100%;
+          position: relative;
+          padding: 4px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          transition: all 0.2s ease-in-out;
+        }
+        .planner-places-accordian-api-tags-search-icon {
+          right: 0;
+          transition: all 0.2s ease-in-out !important; /* !important 추가 */
+        }
+      }
+    }
+
+    .planner-places-accordian-api-main {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .planner-places-accordian-api-main-noresult {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .loading {
+      opacity: 0.5;
+    }
+  }
+}
+
+.planner-places-accordian-api.active {
+  border: 1px solid var(--basic-color);
+  box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+
+  .planner-places-accordian-api-title {
+    .planner-places-accordian-api-title-icon.active {
+      transform: rotate(-180deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}

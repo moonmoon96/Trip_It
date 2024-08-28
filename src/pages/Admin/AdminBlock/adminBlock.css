@@ -1,0 +1,119 @@
+.admin-block {
+  padding: 10px;
+  .admin-block-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .admin-block-panels {
+      display: flex;
+      justify-content: space-between;
+
+      .admin-block-panels-left {
+        display: flex;
+        align-items: center;
+      }
+      .admin-block-panels-right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+
+    .admin-block-delete {
+      display: flex;
+      justify-content: right;
+      visibility: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      .admin-block-delete-selecteall {
+        color: blue;
+        cursor: pointer;
+      }
+      .admin-block-delete-title {
+        color: red;
+        cursor: pointer;
+      }
+    }
+    .admin-block-delete.open {
+      margin-top: 10px;
+      visibility: visible;
+      max-height: 50px;
+      opacity: 1;
+      margin: 10px 0;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      gap: 5px;
+      font-size: 14px;
+      .admin-block-delete-selecteall:hover {
+        font-weight: bold;
+      }
+      .admin-block-delete-title:hover {
+        font-weight: bold;
+      }
+    }
+
+    .admin-block-grid-loading {
+      text-align: center;
+      margin: 160px auto;
+      animation: rotateAnimation 1s ease-in-out infinite;
+    }
+    .admin-block-grid-empty {
+      text-align: center;
+      margin: 160px auto;
+    }
+    .admin-block-grid {
+      display: grid;
+      /* 1fr의 너비 제한 */
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 10px;
+    }
+    .admin-block-search {
+      margin-top: 20px;
+    }
+    .admin-block-pagination {
+    }
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 761px) {
+  .admin-block {
+    .admin-block-container {
+      .admin-block-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 761px) and (max-width: 950px) {
+  .admin-block {
+    .admin-block-container {
+      .admin-block-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+  }
+}
+@media screen and (min-width: 951px) {
+  .admin-block {
+    .admin-block-container {
+      .admin-block-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+            0,
+            1fr
+          );
+      }
+    }
+  }
+}

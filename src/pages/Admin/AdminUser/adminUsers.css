@@ -1,0 +1,124 @@
+.admin-users {
+  padding: 10px;
+  .admin-users-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .admin-users-panels {
+      display: flex;
+      justify-content: space-between;
+      .admin-users-panels-left {
+        display: flex;
+        align-items: center;
+      }
+      .admin-users-panels-right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+
+    .admin-users-delete {
+      margin-top: 10px;
+      display: flex;
+      justify-content: right;
+      visibility: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      .admin-users-delete-selecteall {
+        color: blue;
+        cursor: pointer;
+      }
+      .admin-users-delete-title {
+        color: red;
+        cursor: pointer;
+      }
+    }
+    .admin-users-delete.open {
+      visibility: visible;
+      max-height: 50px;
+      opacity: 1;
+      margin: 10px 0;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      gap: 5px;
+      font-size: 14px;
+      .admin-users-delete-selecteall:hover {
+        font-weight: bold;
+      }
+      .admin-users-delete-title:hover {
+        font-weight: bold;
+      }
+    }
+
+    .admin-users-grid-loading {
+      text-align: center;
+      margin: 160px auto;
+      animation: rotateAnimation 1s ease-in-out infinite;
+    }
+    .admin-users-grid-empty {
+      text-align: center;
+      margin: 160px auto;
+    }
+    .admin-users-grid {
+      display: grid;
+      /* 1fr의 너비 제한 */
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+      grid-gap: 10px;
+    }
+    .admin-users-search {
+      margin-top: 20px;
+    }
+    .admin-users-pagination {
+    }
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .admin-users {
+    .admin-users-container {
+      .admin-users-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+    }
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 761px) {
+  .admin-users {
+    .admin-users-container {
+      .admin-users-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 761px) and (max-width: 950px) {
+  .admin-users {
+    .admin-users-container {
+      .admin-users-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  }
+}
+@media screen and (min-width: 951px) {
+  .admin-users {
+    .admin-users-container {
+      .admin-users-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+  }
+}

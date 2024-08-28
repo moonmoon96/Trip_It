@@ -1,0 +1,122 @@
+.admin-post {
+  padding: 10px;
+  .admin-post-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .admin-post-panels {
+      display: flex;
+      justify-content: space-between;
+
+      .admin-post-panels-left {
+        display: flex;
+        align-items: center;
+      }
+      .admin-post-panels-right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+
+    .admin-post-delete {
+      margin-top: 10px;
+      display: flex;
+      justify-content: right;
+      visibility: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      .admin-post-delete-selecteall {
+        color: blue;
+        cursor: pointer;
+      }
+      .admin-post-delete-title {
+        color: red;
+        cursor: pointer;
+      }
+    }
+    .admin-post-delete.open {
+      visibility: visible;
+      max-height: 50px;
+      opacity: 1;
+      margin: 10px 0;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      gap: 5px;
+      font-size: 14px;
+      .admin-post-delete-selecteall:hover {
+        font-weight: bold;
+      }
+      .admin-post-delete-title:hover {
+        font-weight: bold;
+      }
+    }
+    .admin-post-grid-empty {
+      text-align: center;
+      margin: 160px auto;
+    }
+
+    .admin-post-grid-loading {
+      text-align: center;
+      margin: 160px auto;
+      animation: rotateAnimation 1s ease-in-out infinite;
+    }
+    .admin-post-grid-empty {
+      text-align: center;
+      margin: 160px auto;
+    }
+    .admin-post-grid {
+      display: grid;
+      /* 1fr의 너비 제한 */
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 10px;
+    }
+    .admin-post-search {
+      margin-top: 20px;
+    }
+    .admin-post-pagination {
+    }
+  }
+}
+@media screen and (max-width: 761px) {
+  .admin-post {
+    .admin-post-container {
+      .admin-post-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 761px) and (max-width: 950px) {
+  .admin-post {
+    .admin-post-container {
+      .admin-post-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+  }
+}
+@media screen and (min-width: 951px) {
+  .admin-post {
+    .admin-post-container {
+      .admin-post-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+            0,
+            1fr
+          );
+      }
+    }
+  }
+}

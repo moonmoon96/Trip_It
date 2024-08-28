@@ -1,0 +1,286 @@
+.schedule-pc-update {
+  height: 400px;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+
+  .schedule-pc-update-content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 10px;
+    flex-grow: 1;
+
+    .schedule-pc-update-header {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+      .schedule-pc-update-header-title {
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        .schedule-pc-update-header-title-name {
+          display: flex;
+          gap: 5px;
+        }
+        .schedule-pc-update-header-title-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: transform 0.3s ease-in-out;
+        }
+        .schedule-pc-update-header-title-icon.open {
+          transform: rotate(90deg);
+          transition: transform 0.3s ease-in-out;
+        }
+      }
+      .schedule-pc-update-header-container {
+        padding: 0 20px;
+        visibility: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .schedule-pc-update-header-example {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          p.example {
+            font-size: 14px;
+          }
+          p.validation {
+            font-size: 14px;
+            color: var(--basic-color);
+          }
+        }
+        .schedule-pc-update-header-text {
+          position: relative;
+          .schedule-pc-update-header-textbox {
+            width: 100%;
+            padding: 10px 0;
+            outline: none;
+            border: 0px;
+            border-bottom: 1px solid #ccc;
+          }
+          .schedule-pc-update-header-title-detail {
+            position: absolute;
+            font-size: 12px;
+            color: #ccc;
+            right: 0;
+            bottom: 5px;
+          }
+        }
+      }
+
+      .schedule-pc-update-header-container.open {
+        visibility: visible;
+        max-height: 111px;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    .schedule-pc-update-plan {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+
+      .schedule-pc-update-plan-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .schedule-pc-update-plan-title-left {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          .schedule-pc-update-plan-title-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease-in-out;
+          }
+          .schedule-pc-update-plan-title-icon.open {
+            transform: rotate(90deg);
+            transition: all 0.3s ease-in-out;
+          }
+          .schedule-pc-update-plan-title-name {
+            font-size: 14px;
+          }
+        }
+
+        .schedule-pc-update-plan-title-right {
+          .schedule-pc-update-plan-title-delete {
+            font-size: 14px;
+            color: red;
+            cursor: pointer;
+            margin-right: 20px;
+          }
+        }
+      }
+      .schedule-pc-update-plan-container {
+        flex-grow: 1; /* 추가 */
+        padding: 0 20px;
+
+        visibility: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+
+        .schedule-pc-update-plan-date-container {
+          box-sizing: border-box;
+          display: grid;
+          grid-template-columns: minmax(270px, 1fr) minmax(270px, 1fr);
+          grid-template-rows: auto;
+          grid-gap: 10px;
+        }
+      }
+      .schedule-pc-update-plan-container.open {
+        visibility: visible;
+        max-height: 100%;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    .schedule-pc-update-btn {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      padding-bottom: 20px;
+
+      .register-btn {
+        box-sizing: border-box;
+        width: 300px;
+        border: none;
+        border-radius: 10px;
+        padding: 15px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .register-btn-valid {
+        box-sizing: border-box;
+        width: 300px;
+        border: none;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: var(--basic-color);
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      .register-btn-valid.submitting {
+        .icon.submitting {
+          transform: rotate(5400deg);
+          transition: transform 1s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+.scroll {
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  overflow-y: scroll;
+  border: 1px solid black;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Nanum Gothic";
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 스크롤바 설정*/
+.schedule-pc-update-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 스크롤바 막대 설정*/
+.schedule-pc-update-content::-webkit-scrollbar-thumb {
+  background-color: var(--basic-hover-color);
+  /* 스크롤바 둥글게 설정    */
+  border-radius: 7px;
+}
+
+.schedule-pc-update-content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--basic-color);
+  /* 스크롤바 둥글게 설정    */
+  border-radius: 7px;
+}
+
+/* 스크롤바 뒷 배경 설정*/
+.schedule-pc-update-content::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* schedule-pc-update-content */
+@media screen and (max-width: 625px) {
+  .schedule-pc-update {
+    .schedule-pc-update-content {
+      .schedule-pc-update-plan {
+        .schedule-pc-update-plan-container {
+          .schedule-pc-update-plan-date-container {
+            grid-template-columns: minmax(270px, 1fr);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 626px) and (max-width: 890px) {
+  .schedule-pc-update {
+    .schedule-pc-update-content {
+      .schedule-pc-update-plan {
+        .schedule-pc-update-plan-container {
+          .schedule-pc-update-plan-date-container {
+            grid-template-columns: minmax(270px, 1fr) minmax(270px, 1fr);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 891px) and (max-width: 940px) {
+  .schedule-pc-update {
+    .schedule-pc-update-content {
+      .schedule-pc-update-plan {
+        .schedule-pc-update-plan-container {
+          .schedule-pc-update-plan-date-container {
+            grid-template-columns: minmax(270px, 1fr) minmax(270px, 1fr) minmax(
+                270px,
+                1fr
+              );
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 941px) {
+  .schedule-pc-update {
+    .schedule-pc-update-content {
+      .schedule-pc-update-plan {
+        .schedule-pc-update-plan-container {
+          .schedule-pc-update-plan-date-container {
+            grid-template-columns:
+              minmax(270px, 1fr) minmax(270px, 1fr) minmax(270px, 1fr)
+              minmax(270px, 1fr);
+          }
+        }
+      }
+    }
+  }
+}

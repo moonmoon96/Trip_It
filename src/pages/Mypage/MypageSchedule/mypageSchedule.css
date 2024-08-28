@@ -1,0 +1,116 @@
+.mypage-schedule {
+  padding: 10px;
+  .mypage-schedule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .mypage-schedule-panels {
+      display: flex;
+      justify-content: space-between;
+      .mypage-schedule-panels-left {
+        display: flex;
+        align-items: center;
+      }
+      .mypage-schedule-panels-right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+
+    .mypage-schedule-delete {
+      display: flex;
+      justify-content: right;
+      visibility: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      .mypage-schedule-delete-selecteall {
+        color: blue;
+        cursor: pointer;
+      }
+      .mypage-schedule-delete-title {
+        color: red;
+        cursor: pointer;
+      }
+    }
+    .mypage-schedule-delete.open {
+      visibility: visible;
+      max-height: 50px;
+      opacity: 1;
+
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      gap: 5px;
+      font-size: 14px;
+      .mypage-schedule-delete-selecteall:hover {
+        font-weight: bold;
+      }
+      .mypage-schedule-delete-title:hover {
+        font-weight: bold;
+      }
+    }
+    .mypage-schedule-grid-loading {
+      text-align: center;
+      margin: 160px auto;
+      animation: rotateAnimation 1s ease-in-out infinite;
+    }
+    .mypage-schedule-grid-empty {
+      text-align: center;
+      margin: 160px auto;
+    }
+    .mypage-schedule-grid {
+      display: grid;
+      /* 1fr의 너비 제한 */
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 10px;
+    }
+    .mypage-schedule-search {
+      margin-top: 20px;
+    }
+    .mypage-schedule-pagination {
+    }
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 761px) {
+  .mypage-schedule {
+    .mypage-schedule-container {
+      .mypage-schedule-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 761px) and (max-width: 950px) {
+  .mypage-schedule {
+    .mypage-schedule-container {
+      .mypage-schedule-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+  }
+}
+@media screen and (min-width: 951px) {
+  .mypage-schedule {
+    .mypage-schedule-container {
+      .mypage-schedule-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+            0,
+            1fr
+          );
+      }
+    }
+  }
+}

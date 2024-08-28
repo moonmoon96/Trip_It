@@ -1,0 +1,33 @@
+.admin-users-card {
+  user-select: none;
+  .admin-users-card-link {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--basic-color);
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 4px 4px;
+    padding: 10px;
+    gap: 10px;
+
+    cursor: pointer;
+    .admin-users-card-photo-container {
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+      }
+    }
+    .admin-users-card-info-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .admin-users-card-info-item {
+        font-size: 12px;
+      }
+    }
+  }
+}

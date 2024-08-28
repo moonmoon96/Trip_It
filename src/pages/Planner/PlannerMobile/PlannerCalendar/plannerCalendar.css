@@ -1,0 +1,51 @@
+.planner-calendar {
+  touch-action: pan-y; /* 수직 스크롤만 허용 */
+  .planner-calendar-title {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .planner-calendar-month {
+    text-align: center;
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .planner-calendar-main {
+  }
+
+  .planner-calendar-btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px 20px;
+
+    .planner-calendar-btns-btn {
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid var(--basic-color);
+      border-radius: 10px;
+      background-color: transparent;
+      visibility: hidden;
+      max-height: 0px;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .backward {
+      visibility: visible;
+      max-height: 100px;
+      opacity: 1;
+    }
+
+    .forward {
+      border: none;
+      background-color: var(--basic-color);
+      color: #fff;
+
+      visibility: visible;
+      max-height: 100px;
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}

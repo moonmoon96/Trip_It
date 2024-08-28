@@ -1,0 +1,123 @@
+.planner-places-accordian-date {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 4px 2px;
+  padding: 10px;
+
+  .planner-places-accordian-date-title {
+    display: flex;
+    justify-content: space-between;
+    .planner-places-accordian-date-title-container {
+      width: 76%;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      .planner-places-accordian-date-title-name {
+      }
+      .planner-places-accordian-date-title-info {
+        font-size: 12px;
+      }
+    }
+    .planner-places-accordian-date-title-icon {
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .planner-places-accordian-date-container {
+    visibility: hidden;
+    max-height: 0px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .planner-places-accordian-date-container.active {
+    visibility: visible;
+    max-height: 500px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .planner-places-accordian-date-main {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .planner-places-accordian-date-infos {
+      font-size: 12px;
+      text-align: center;
+      transition: all 0.2s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      .planner-places-accordian-date-infos-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .planner-places-accordian-date-infos-detail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .planner-places-accordian-date-map {
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 4px 2px;
+    visibility: hidden;
+    max-height: 0px;
+    opacity: 0;
+  }
+}
+
+.planner-places-accordian-date.active {
+  box-sizing: border-box;
+  border: 1px solid var(--basic-color);
+  box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+
+  .planner-places-accordian-date-title {
+    .planner-places-accordian-date-title-icon.active {
+      transform: rotate(-180deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  .planner-places-accordian-date-map {
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    visibility: hidden;
+    max-height: 0px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .planner-places-accordian-date-map.active {
+    margin-top: 10px;
+    visibility: visible;
+    max-height: 300px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    .planner-places-accordian-date-map-title {
+      text-align: center;
+      font-size: 12px;
+      padding: 5px;
+    }
+  }
+}
+
+.planner-places-accordian-date.completed {
+  box-sizing: border-box;
+  border: 2px solid var(--basic-color);
+}

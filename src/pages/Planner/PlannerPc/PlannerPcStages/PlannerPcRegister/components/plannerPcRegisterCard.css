@@ -1,0 +1,346 @@
+.planner-pc-register-card {
+  user-select: none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 4px 2px;
+  margin: 0 auto;
+
+  position: relative;
+  transition: transform 0.3s ease; /* 애니메이션 적용 */
+  .planner-pc-register-card-main {
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px;
+
+    .planner-pc-register-card-main-position {
+      box-sizing: border-box;
+      display: block;
+      background-color: #ccc;
+      border-radius: 10px 0 0 10px;
+      transition: border-radius 0.3s ease-in-out;
+      flex: 1;
+
+      .planner-pc-register-card-main-position-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 0 4px;
+        height: 100%;
+        .planner-pc-register-card-main-position-up {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .planner-pc-register-card-main-position-up.deactive {
+          color: #fff;
+        }
+        .planner-pc-register-card-main-position-down {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .planner-pc-register-card-main-position-down.deactive {
+          color: #fff;
+        }
+      }
+    }
+    .planner-pc-register-card-main-position.open {
+      border-radius: 10px 0 0 0;
+      transition: border-radius 0.3s ease-in-out;
+    }
+    .planner-pc-register-card-main-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 83%;
+      background-color: #fff;
+      .planner-pc-register-card-main-info-photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          display: block;
+          width: 60px;
+          height: 60px;
+        }
+      }
+      .planner-pc-register-card-main-info-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        width: calc(100% - 70px);
+        .planner-pc-register-card-main-info-detail-title {
+          display: flex;
+          gap: 10px;
+          .planner-pc-register-card-main-info-detail-title-name {
+            font-size: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .planner-pc-register-card-main-info-detail-title-tag {
+            font-size: 12px;
+          }
+          .planner-pc-register-card-main-info-detail-title-tag.tour {
+            color: blue;
+          }
+          .planner-pc-register-card-main-info-detail-title-tag.culture {
+            color: red;
+          }
+          .planner-pc-register-card-main-info-detail-title-tag.food {
+            color: green;
+          }
+          .planner-pc-register-card-main-info-detail-title-tag.accommo {
+            color: pink;
+          }
+        }
+        .planner-pc-register-card-main-info-detail-addr {
+          font-size: 12px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .planner-pc-register-card-main-info-detail-time {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .planner-pc-register-card-main-dropdown {
+      cursor: pointer;
+      box-sizing: border-box;
+      width: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      background-color: var(--basic-color);
+      border-radius: 0 10px 10px 0;
+      position: relative;
+      transition: border-radius 0.3s ease-in-out;
+
+      .planner-pc-register-card-main-dropdown-title {
+      }
+      .planner-pc-register-card-main-dropdown-container {
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        top: 100%;
+        right: 0;
+        width: 50px;
+        z-index: 1;
+        font-size: 14px;
+
+        overflow-y: auto;
+
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+
+        .planner-pc-register-card-main-dropdown-item {
+          padding: 4px;
+          text-align: center;
+        }
+
+        .planner-pc-register-card-main-dropdown-item.selected {
+          padding: 4px;
+          color: var(--basic-color);
+          text-align: center;
+        }
+      }
+      .planner-pc-register-card-main-dropdown-container.active {
+        visibility: visible;
+        max-height: 100px;
+        opacity: 1;
+
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    .planner-pc-register-card-main-dropdown.open {
+      border-radius: 0 10px 0px 0;
+      transition: border-radius 0.3s ease-in-out;
+    }
+
+    .planner-pc-register-card-main-click.open {
+      border-radius: 0 10px 0px 0;
+    }
+
+    .planner-pc-register-card-main-click.requesting {
+      background-color: #ccc;
+    }
+  }
+  .planner-pc-register-card-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    visibility: hidden;
+    max-height: 0px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    .planner-pc-register-card-overview-depict {
+      border: 1px solid #ccc;
+      box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 4px 2px;
+      padding: 5px;
+      font-size: 12px;
+      border-radius: 10px;
+
+      .planner-pc-register-card-overview-depict-title {
+        text-align: center;
+      }
+      .planner-pc-register-card-overview-depict-detail {
+        overflow-y: auto;
+
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      .planner-pc-register-card-overview-depict-detail.open {
+        visibility: visible;
+        margin-top: 5px;
+        max-height: 100px;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    .planner-pc-register-card-overview-map {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 4px 2px;
+      padding: 5px;
+      font-size: 12px;
+
+      .planner-pc-register-card-overview-map-title {
+        text-align: center;
+      }
+      .planner-pc-register-card-overview-map-container {
+        overflow-y: auto;
+
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      .planner-pc-register-card-overview-map-container.open {
+        visibility: visible;
+        padding-top: 10px;
+        max-height: 250px;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .planner-pc-register-card-overview.active {
+    padding: 10px;
+    visibility: visible;
+    max-height: 500px;
+    opacity: 1;
+
+    transition: all 0.3s ease-in-out;
+
+    .planner-pc-register-card-overview-depict {
+      border: 1px solid #ccc;
+      padding: 5px;
+      font-size: 12px;
+      border-radius: 10px;
+
+      .planner-pc-register-card-overview-depict-title {
+        text-align: center;
+      }
+      .planner-pc-register-card-overview-depict-detail {
+        overflow-y: auto;
+
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      .planner-pc-register-card-overview-depict-detail.open {
+        visibility: visible;
+        margin-top: 5px;
+        max-height: 100px;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    .planner-pc-register-card-overview-map {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 5px;
+      font-size: 12px;
+
+      .planner-pc-register-card-overview-map-title {
+        text-align: center;
+      }
+      .planner-pc-register-card-overview-map-container {
+        overflow-y: auto;
+
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      .planner-pc-register-card-overview-map-container.open {
+        visibility: visible;
+        padding-top: 10px;
+        max-height: 250px;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+.planner-pc-register-card-indicator {
+  box-sizing: border-box;
+  height: 10px;
+  opacity: 0.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  margin: 10px;
+  p {
+  }
+}
+.planner-pc-register-card-indicator:last-child {
+  flex: 1;
+}
+
+.planner-pc-register-card-indicator.droppable {
+  p {
+    height: 10px;
+    /* background-color: var(--basic-color); */
+  }
+}
+
+.move-up {
+  transform: translateY(-100%);
+}
+
+.move-down {
+  transform: translateY(100%); /* 아래로 이동 */
+}

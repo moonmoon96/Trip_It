@@ -1,0 +1,126 @@
+.mypage-report {
+  padding: 10px;
+  .mypage-report-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .mypage-report-panels {
+      display: flex;
+      justify-content: space-between;
+      .mypage-report-panels-left {
+        display: flex;
+        align-items: center;
+      }
+      .mypage-report-panels-right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+
+    .mypage-report-delete {
+      margin-top: 10px;
+      display: flex;
+      justify-content: right;
+      visibility: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      .mypage-report-delete-selecteall {
+        color: blue;
+        cursor: pointer;
+      }
+      .mypage-report-delete-title {
+        color: red;
+        cursor: pointer;
+      }
+    }
+    .mypage-report-delete.open {
+      visibility: visible;
+      max-height: 50px;
+      opacity: 1;
+      margin: 10px 0;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      gap: 5px;
+      font-size: 14px;
+      .mypage-report-delete-selecteall:hover {
+        font-weight: bold;
+      }
+      .mypage-report-delete-title:hover {
+        font-weight: bold;
+      }
+    }
+    .mypage-report-grid-loading {
+      text-align: center;
+      margin: 160px auto;
+      animation: rotateAnimation 1s ease-in-out infinite;
+    }
+    .mypage-report-grid-empty {
+      text-align: center;
+      margin: 160px auto;
+    }
+    .mypage-report-grid {
+      display: grid;
+      /* 1fr의 너비 제한 */
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 10px;
+    }
+    .mypage-report-search {
+      margin-top: 20px;
+    }
+    .mypage-report-pagination {
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .mypage-report {
+    .mypage-report-container {
+      .mypage-report-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 761px) {
+  .mypage-report {
+    .mypage-report-container {
+      .mypage-report-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 761px) and (max-width: 950px) {
+  .mypage-report {
+    .mypage-report-container {
+      .mypage-report-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+  }
+}
+@media screen and (min-width: 951px) {
+  .mypage-report {
+    .mypage-report-container {
+      .mypage-report-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+            0,
+            1fr
+          );
+      }
+    }
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

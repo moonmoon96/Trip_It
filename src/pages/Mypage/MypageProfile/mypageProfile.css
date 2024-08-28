@@ -1,0 +1,153 @@
+.mypage-profile {
+  padding: 10px;
+  user-select: none;
+
+  .mypage-profile-container {
+    margin: 0 auto;
+    max-width: 800px;
+    .mypage-profile-item {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      display: flex;
+      max-width: 800px;
+      margin: 10px auto;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+
+      .mypage-profile-detail {
+        flex: 1;
+        .mypage-profile-detail-title {
+          font-weight: bold;
+          font-size: 14px;
+          padding: 5px;
+        }
+        .mypage-profile-detail-data {
+          font-size: 14px;
+          padding: 5px;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          width: 50%;
+        }
+
+        .mypage-profile-detail-info {
+          padding: 5px;
+          outline: none;
+          border: none;
+          min-width: 250px;
+          width: 50%;
+        }
+      }
+      .mypage-profile-edit {
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px;
+        color: #444;
+      }
+
+      .mypage-profile-leave {
+        color: red;
+        font-size: 13px;
+        padding: 5px;
+        text-align: right;
+      }
+    }
+
+    .leave {
+      justify-content: right;
+    }
+    .mypage-profile-btn {
+      display: flex;
+      justify-content: right;
+      visibility: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+
+      .mypage-profile-update {
+        cursor: pointer;
+        font-size: 13px;
+        border-radius: 9px;
+        padding: 10px;
+        background-color: var(--basic-color);
+        color: #fff;
+      }
+    }
+    .mypage-profile-btn.open {
+      visibility: visible;
+      max-height: 100px;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+
+      .mypage-profile-update {
+        cursor: pointer;
+        font-size: 13px;
+        border-radius: 9px;
+        padding: 10px;
+        background-color: var(--basic-color);
+        color: #fff;
+
+        .mypage-profile-update-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          transform: translate(0deg);
+          transition: transform 5s ease-in-out;
+        }
+        .mypage-profile-update-icon.requesting {
+          transform: translate(3600deg);
+          transition: transform 5s ease-in-out;
+        }
+      }
+    }
+
+    .mypage-profile-photo {
+      display: flex;
+      justify-content: center;
+      padding: 30px 10px;
+      border-radius: 10px;
+      box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+      .mypage-profile-photo-container {
+        justify-content: center;
+        display: inline-flex;
+        position: relative;
+
+        img {
+          border-radius: 50%;
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+          cursor: pointer;
+        }
+        .mypage-profile-photo-icon {
+          cursor: pointer;
+          background-color: #fff;
+          font-size: 20px;
+          text-align: center;
+          line-height: 30px;
+          position: absolute;
+          right: 10px;
+          bottom: 0;
+          box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px 4px;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          color: #666;
+        }
+      }
+    }
+  }
+}
+
+.mypage-profile-loading {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

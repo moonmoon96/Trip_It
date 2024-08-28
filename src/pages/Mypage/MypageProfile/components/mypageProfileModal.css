@@ -1,0 +1,74 @@
+.mypage-schedule-modal {
+  visibility: hidden;
+  max-width: 0;
+  opacity: 0;
+  position: fixed;
+  background-color: #00000064;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+
+  .mypage-schedule-modal-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    max-height: 250px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.3) 4px 4px 24px 4px;
+
+    .mypage-schedule-modal-wrapper {
+      padding: 0 20px;
+
+      .mypage-schedule-modal-title {
+        margin-top: 40px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .mypage-schedule-modal-detail {
+        margin-top: 40px;
+        font-size: 14px;
+        text-align: center;
+      }
+      .mypage-schedule-modal-btns {
+        margin-top: 40px;
+        display: flex;
+        justify-content: right;
+        margin-bottom: 20px;
+
+        button {
+          border: none;
+          border-radius: 10px;
+          padding: 10px 10px;
+          cursor: pointer;
+        }
+        .mypage-schedule-modal-btns-cancel {
+          background-color: red;
+          color: #fff;
+        }
+        .mypage-schedule-modal-btns-confirm {
+          background-color: var(--basic-color);
+          color: #fff;
+        }
+        .mypage-schedule-modal-btns-alert {
+          background-color: var(--basic-color);
+          color: #fff;
+        }
+      }
+
+      .mypage-schedule-modal-btns.confirm {
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.mypage-schedule-modal.open {
+  visibility: visible;
+  max-width: 100%;
+  opacity: 1;
+}
